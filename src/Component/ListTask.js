@@ -5,7 +5,7 @@ import { Button,Stack } from "react-bootstrap"
 import { useDispatch, useSelector } from "react-redux"
 import { addTask } from "../Redux/Actions"
 import Task from "./Task"
-
+import { Input } from '@chakra-ui/react'
 const ListTask=()=>{
    const tab = useSelector(state=> state.tab)
    const [textInput,setTextInput]=useState("")
@@ -15,12 +15,13 @@ const ListTask=()=>{
         <div>
             
             <div className="inp-add">
-                <input onChange={e=>setTextInput(e.target.value)}/>
+                {/* <input onChange={e=>setTextInput(e.target.value)}/> */}
+                <Input placeholder='Add task'  htmlSize={4} width='auto' onChange={e=>setTextInput(e.target.value)}/>
                 <br/>
                 <Button variant="primary" size="sm" onClick={()=>dispatch(addTask({description:textInput,id:Math.random(),isDone:false}))}>Add</Button>
             </div>
             
-            <br/><br/>
+            <br/>
             <Button variant="outline-success" onClick={()=>setTest(2)}>Done</Button>
             <Button variant="outline-dark" onClick={()=>setTest(1)}>All</Button>
             <Button variant="outline-danger" onClick={()=>setTest(3)}>Not Done</Button>

@@ -2,6 +2,8 @@ import { useDispatch} from "react-redux"
 import { Modal,Button, } from "react-bootstrap";
 import { useState } from "react";
 import { changeTask } from "../Redux/Actions";
+import { IconButton } from '@chakra-ui/react'
+import {SettingsIcon} from '@chakra-ui/icons'
 const EditTask=({el})=>{
 
     const [inputCahnge,setInputChange] =useState("")
@@ -14,9 +16,10 @@ const EditTask=({el})=>{
 
     return(
         <>
-                <Button variant="primary" onClick={handleShow}>
+                {/* <Button variant="primary" onClick={}>
                  Edit
-                 </Button>
+                 </Button> */}
+                 <IconButton icon={< SettingsIcon boxSize={5}/>} onClick={handleShow} />
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>

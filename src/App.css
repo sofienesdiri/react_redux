@@ -1,12 +1,28 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+
 }
+
 .djeja {
   text-decoration: line-through;
 }
-/* .inp-add{
-  display: flex ;
+
+.main{
+  display: flex;
   flex-direction: column;
-  
-} */
+  align-items: center;
+  border-style: solid;
+  border-color: blue;
+}
+.inp-add{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task{
+  display: flex;
+  flex-direction: column;
+ margin-top: 5%;
+}
